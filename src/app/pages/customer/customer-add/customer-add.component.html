@@ -1,0 +1,36 @@
+<nb-card>
+  <nb-card-body>
+      Adicionar Associado
+  </nb-card-body>
+</nb-card>
+
+<nb-card>
+  <nb-card-body>
+      <div class="row">
+
+        <div class="col-8">
+          <span class="label">
+            Nome:*
+          </span>
+          <input type="text" nbInput fullWidth status="basic" placeholder="Nome:">
+        </div>
+
+        <div class="col-4">
+          <span class="label">
+            Documento:*
+          </span>
+          <nb-form-field>
+            <input type="text" nbInput fullWidth status="basic" placeholder="Documento:">
+            <button nbSuffix nbButton ghost (click)="tooglePersonType()">
+              <nb-icon
+                pack="eva"
+                [icon]="showPerson ? 'person-outline' : 'car-outline'"
+                >
+              </nb-icon>
+            </button>
+          </nb-form-field>
+        </div>
+
+      </div>
+  </nb-card-body>
+</nb-card>

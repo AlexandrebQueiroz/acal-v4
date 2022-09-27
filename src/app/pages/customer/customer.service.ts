@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { addDoc, collection, collectionData, Firestore } from '@angular/fire/firestore';
 
 @Injectable()
-export class DashboardService {
+export class CustomerService {
 
   constructor(private firestore: Firestore) {
   }
@@ -16,5 +16,4 @@ export class DashboardService {
     const collectionRef = collection(this.firestore, 'customer');
     addDoc(collectionRef, data);
   }
-
 }
