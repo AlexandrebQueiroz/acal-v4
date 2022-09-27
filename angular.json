@@ -46,13 +46,8 @@
               "node_modules/tinymce/plugins/link/plugin.min.js",
               "node_modules/tinymce/plugins/paste/plugin.min.js",
               "node_modules/tinymce/plugins/table/plugin.min.js",
-              "node_modules/echarts/dist/echarts.min.js",
-              "node_modules/echarts/dist/extension/bmap.min.js",
-              "node_modules/chart.js/dist/Chart.min.js"
             ],
             "allowedCommonJsDependencies": [
-              "angular2-chartjs",
-              "echarts",
               "lodash",
               "zrender/lib/svg/svg",
               "zrender/lib/vml/vml"
@@ -120,9 +115,6 @@
               "node_modules/tinymce/plugins/link/plugin.min.js",
               "node_modules/tinymce/plugins/paste/plugin.min.js",
               "node_modules/tinymce/plugins/table/plugin.min.js",
-              "node_modules/echarts/dist/echarts.min.js",
-              "node_modules/echarts/dist/extension/bmap.min.js",
-              "node_modules/chart.js/dist/Chart.min.js"
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.css",

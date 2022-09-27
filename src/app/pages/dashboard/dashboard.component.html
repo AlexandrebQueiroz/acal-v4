@@ -1,1 +1,8 @@
 dashboard
+
+<ul>
+  <li *ngFor="let item of item$ | async">
+    {{ item.nome }}
+    {{ item.cpf }}
+  </li>
+</ul>

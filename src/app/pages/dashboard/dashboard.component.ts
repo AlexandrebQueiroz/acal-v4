@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { collection, collectionData, Firestore } from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'ngx-dashboard',
@@ -7,4 +9,10 @@ import { Component } from '@angular/core';
 })
 export class DashboardComponent {
 
+  item$: Observable<any[]>;
+
+  constructor(firestore: Firestore) {
+    const collectionRef = collection(firestore, 'customer');
+    this.item$ = collectionData(collectionRef);
+  }
 }
