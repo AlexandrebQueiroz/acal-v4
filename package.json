@@ -1,14 +1,8 @@
 {
-  "name": "ngx-admin",
-  "version": "8.0.0",
+  "name": "acal-web",
+  "version": "1.0.0",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/akveo/ngx-admin.git"
-  },
-  "bugs": {
-    "url": "https://github.com/akveo/ngx-admin/issues"
-  },
+
   "scripts": {
     "ng": "ng",
     "conventional-changelog": "conventional-changelog",
@@ -18,7 +12,7 @@
     "test": "ng test",
     "test:coverage": "rimraf coverage && npm run test -- --code-coverage",
     "lint": "ng lint",
-    "lint:fix": "ng lint ngx-admin-demo --fix",
+    "lint:fix": "ng lint acal-web-demo --fix",
     "lint:styles": "stylelint ./src/**/*.scss",
     "lint:ci": "npm run lint && npm run lint:styles",
     "pree2e": "webdriver-manager update --standalone false --gecko false",
@@ -47,20 +41,13 @@
     "@nebular/security": "9.0.0",
     "@nebular/theme": "9.0.0",
     "@swimlane/ngx-charts": "^14.0.0",
-    "angular2-chartjs": "0.4.1",
     "bootstrap": "4.3.1",
-    "chart.js": "2.7.1",
-    "ckeditor": "4.7.3",
     "core-js": "2.5.1",
-    "echarts": "^4.0.2",
     "eva-icons": "^1.1.3",
     "intl": "1.2.5",
     "ionicons": "2.0.1",
     "leaflet": "1.2.0",
     "nebular-icons": "1.1.0",
-    "ng2-ckeditor": "^1.2.9",
-    "ng2-smart-table": "^1.6.0",
-    "ngx-echarts": "^4.2.2",
     "normalize.css": "6.0.0",
     "pace-js": "1.0.2",
     "roboto-fontface": "0.8.0",
