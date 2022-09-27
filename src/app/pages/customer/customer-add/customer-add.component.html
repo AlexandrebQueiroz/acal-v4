@@ -20,11 +20,12 @@
             Documento:*
           </span>
           <nb-form-field>
-            <input type="text" nbInput fullWidth status="basic" placeholder="Documento:">
+            <input type="text" nbInput fullWidth status="basic" placeholder="Documento:"  [mask]="showPerson? '000.000.000-009' : '00.000.000/0000-00'">
             <button nbSuffix nbButton ghost (click)="tooglePersonType()">
               <nb-icon
                 pack="eva"
                 [icon]="showPerson ? 'person-outline' : 'car-outline'"
+                [attr.aria-label]="showPerson ? 'hide password' : 'show password'"
                 >
               </nb-icon>
             </button>

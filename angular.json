@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "acal-web-demo": {
+    "acal-web": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -90,18 +90,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "acal-web-demo:build"
+            "browserTarget": "acal-web:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "acal-web-demo:build:production"
+              "browserTarget": "acal-web:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "acal-web-demo:build"
+            "browserTarget": "acal-web:build"
           }
         },
         "test": {
@@ -154,7 +154,7 @@
         }
       }
     },
-    "acal-web-demo-e2e": {
+    "acal-web-e2e": {
       "root": "",
       "sourceRoot": "",
       "projectType": "application",
@@ -163,13 +163,13 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "./protractor.conf.js",
-            "devServerTarget": "acal-web-demo:serve"
+            "devServerTarget": "acal-web:serve"
           }
         }
       }
     }
   },
-  "defaultProject": "acal-web-demo",
+  "defaultProject": "acal-web",
   "schematics": {
     "@schematics/angular:component": {
       "prefix": "ngx",

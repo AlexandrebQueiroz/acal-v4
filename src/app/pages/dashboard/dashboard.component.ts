@@ -9,15 +9,8 @@ import { DashboardService } from './dashboard.service';
 })
 export class DashboardComponent {
 
-  item$: Observable<any[]>;
-
-  constructor(private service: DashboardService) {
-    this.item$ = this.service.get();
-    this.add();
+  constructor() {
   }
 
-  add(){
-    this.service.add({nome: 'teste', cpf: '03396885562'});
-  }
 
 }

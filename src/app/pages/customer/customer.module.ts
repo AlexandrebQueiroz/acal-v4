@@ -7,6 +7,7 @@ import { CustomerRoutingModule } from './customer-routing.module';
 import { CustomerListComponent } from './customer-list/customer-list.component';
 import { CustomerAddComponent } from './customer-add/customer-add.component';
 import { LibraryModule } from '../../@library/library.module';
+import { NgxMaskModule } from 'ngx-mask';
 
 @NgModule({
   imports: [
@@ -18,6 +19,7 @@ import { LibraryModule } from '../../@library/library.module';
     NbInputModule,
     NbFormFieldModule,
     NbIconModule,
+    NgxMaskModule.forChild(),
   ],
   declarations: [
     CustomerComponent,
