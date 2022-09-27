@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { collection, collectionData, Firestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
+import { DashboardService } from './dashboard.service';
 
 @Component({
   selector: 'ngx-dashboard',
@@ -11,8 +11,13 @@ export class DashboardComponent {
 
   item$: Observable<any[]>;
 
-  constructor(firestore: Firestore) {
-    const collectionRef = collection(firestore, 'customer');
-    this.item$ = collectionData(collectionRef);
+  constructor(private service: DashboardService) {
+    this.item$ = this.service.get();
+    this.add();
   }
+
+  add(){
+    this.service.add({nome: 'teste', cpf: '03396885562'});
+  }
+
 }
