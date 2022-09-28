@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { Observable } from 'rxjs';
-import { DashboardService } from './dashboard.service';
 
 @Component({
   selector: 'ngx-dashboard',
@@ -11,6 +9,5 @@ export class DashboardComponent {
 
   constructor() {
   }
-
 
 }

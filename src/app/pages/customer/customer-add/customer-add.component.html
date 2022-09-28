@@ -1,37 +1,83 @@
-<nb-card>
-  <nb-card-body>
-      Adicionar Associado
-  </nb-card-body>
-</nb-card>
+<form class="form" [formGroup]="form" (ngSubmit)="onSubmit()" [nbSpinner]="loading">
+  <nb-card>
+    <nb-card-body>
+        Adicionar Associado
+    </nb-card-body>
+  </nb-card>
 
-<nb-card>
-  <nb-card-body>
+  <nb-card>
+    <nb-card-body>
       <div class="row">
 
-        <div class="col-8">
+        <div class="col-xl-8 col-md-6 col-12 form-group ">
+
           <span class="label">
             Nome:*
           </span>
-          <input type="text" nbInput fullWidth status="basic" placeholder="Nome:">
+
+          <input
+            type="text"
+            nbInput
+            fullWidth
+            [status]='getStatus(name())'
+            formControlName="name"
+            class="form-control"
+            placeholder="Nome:">
+
+          <span class="text-danger label" *ngIf="isSubmmited && name().hasError('required')">
+            Campo Obrigatório
+          </span>
+
         </div>
 
-        <div class="col-4">
+        <div class="col-xl-4 col-md-6 col-12 form-group ">
+
           <span class="label">
-            Documento:*
+            {{showPerson ? 'C.P.F*:' : 'C.N.P.J*:'}}
           </span>
+
           <nb-form-field>
-            <input type="text" nbInput fullWidth status="basic" placeholder="Documento:"  [mask]="showPerson? '000.000.000-009' : '00.000.000/0000-00'">
-            <button nbSuffix nbButton ghost (click)="tooglePersonType()">
+
+            <input
+              type="text"
+              nbInput
+              fullWidth
+              class="form-control"
+              status="basic"
+              [placeholder]="showPerson ? 'C.P.F*:' : 'C.N.P.J*:'"
+              formControlName="document"
+              [status]='getStatus(document())'
+              [mask]="showPerson? '000.000.000-00' : '00.000.000/0000-00'">
+
+            <button nbSuffix nbButton ghost type="button" (click)="tooglePersonType()">
               <nb-icon
                 pack="eva"
                 [icon]="showPerson ? 'person-outline' : 'car-outline'"
-                [attr.aria-label]="showPerson ? 'hide password' : 'show password'"
-                >
+                [attr.aria-label]="showPerson ? 'hide password' : 'show password'">
               </nb-icon>
             </button>
+
           </nb-form-field>
+
+          <span class="text-danger label" *ngIf="isSubmmited && document().hasError('required')">
+            Campo Obrigatório
+          </span>
+
         </div>
 
       </div>
-  </nb-card-body>
-</nb-card>
+    </nb-card-body>
+
+    <nb-card-footer>
+
+      <button nbButton type="button" (click)="back()" class="m-1" >
+        Voltar
+      </button>
+
+      <button nbButton type="submit" class="m-1">
+        Enviar
+      </button>
+
+    </nb-card-footer>
+  </nb-card>
+</form>

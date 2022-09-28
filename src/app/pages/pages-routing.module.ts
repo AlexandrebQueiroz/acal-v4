@@ -20,6 +20,11 @@ const routes: Routes = [{
         .then(m => m.CustomerModule),
     },
     {
+      path: 'group',
+      loadChildren: () => import('./group/group.module')
+        .then(m => m.GroupModule),
+    },
+    {
       path: '',
       redirectTo: 'dashboard',
       pathMatch: 'full',
