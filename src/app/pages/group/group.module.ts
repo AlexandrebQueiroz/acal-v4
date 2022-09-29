@@ -11,6 +11,7 @@ import { GroupRoutingModule } from './group-routing.module';
 import { GroupComponent } from './group.component';
 import { GroupService } from './group.service';
 import { GroupDeleteComponent } from './group-delete/group-delete.component';
+import { GroupEditComponent } from './group-edit/group-edit.component';
 
 @NgModule({
   imports: [
@@ -33,6 +34,7 @@ import { GroupDeleteComponent } from './group-delete/group-delete.component';
     GroupAddComponent,
     GroupListComponent,
     GroupDeleteComponent,
+    GroupEditComponent,
   ],
   providers:[
     GroupService,

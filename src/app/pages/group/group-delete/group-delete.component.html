@@ -14,6 +14,7 @@
           nbInput
           fullWidth
           [(ngModel)]="item.name"
+          disabled
           class="form-control"
           placeholder="Nome:">
       </div>
@@ -27,6 +28,7 @@
         <nb-select
           placeholder="Selecione"
           fullWidth
+          disabled
           [(selected)]="item.category"
           title="Categoria:">
           <nb-option value="Sócio Fundador">Sócio Fundador</nb-option>
@@ -47,6 +49,7 @@
           [thousandSeparator]="'.'"
           [decimalMarker]="','"
           prefix="R$ "
+          disabled
           [(ngModel)]="item.value"
           [dropSpecialCharacters]="true"
           type="text"
@@ -55,7 +58,6 @@
           class="form-control"
           placeholder="Valor:">
       </div>
-
 
     </div>
   </nb-card-body>

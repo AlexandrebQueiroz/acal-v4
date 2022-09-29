@@ -26,6 +26,9 @@ export class GroupDeleteComponent implements OnInit {
 
   ngOnInit(): void {
     this.item = this.dataService.item;
+    if(!this.item){
+      this.back();
+    }
   }
 
   public delete(){

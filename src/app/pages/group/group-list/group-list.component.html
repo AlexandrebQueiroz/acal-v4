@@ -84,7 +84,7 @@
             <td class="align-middle">{{item?.name}}</td>
             <td class="align-middle">{{item?.value | currency}}</td>
             <td>
-              <button nbButton fullWidth outline (click)="add()" status="success">
+              <button nbButton fullWidth outline (click)="edit(item)" status="success">
                 <nb-icon
                   pack="eva"
                   icon='edit-outline'

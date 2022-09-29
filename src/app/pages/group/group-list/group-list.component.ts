@@ -7,7 +7,7 @@ import { GroupService } from '../group.service';
 @Component({
   selector: 'ngx-group-list',
   templateUrl: './group-list.component.html',
-  styleUrls: ['./group-list.component.scss']
+  styleUrls: ['./group-list.component.scss'],
 })
 export class GroupListComponent implements OnInit {
 
@@ -27,6 +27,11 @@ export class GroupListComponent implements OnInit {
 
   add() {
     this.router.navigate(['./../add'], {relativeTo: this.activatedRoute});
+  }
+
+  edit(item: any){
+    this.dataService.item = item;
+    this.router.navigate(['./../edit'], { relativeTo: this.activatedRoute});
   }
 
   delete(item: any) {

@@ -1,22 +1,25 @@
+import { DataService } from './../../../@data/data.service';
 import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NbToastrService } from '@nebular/theme';
 import { GroupService } from '../group.service';
 
 @Component({
-  selector: 'ngx-group-add',
-  templateUrl: './group-add.component.html',
-  styleUrls: ['./group-add.component.scss'],
+  selector: 'ngx-group-edit',
+  templateUrl: './group-edit.component.html',
+  styleUrls: ['./group-edit.component.scss'],
 })
-export class GroupAddComponent implements OnInit {
+export class GroupEditComponent implements OnInit {
 
   public isSubmmited = false;
   public form: FormGroup;
+  public init = false;
   public loading = false;
 
   constructor(
     private toast: NbToastrService,
+    private dataService: DataService,
     private fb: FormBuilder,
     private service: GroupService,
     private activatedRoute: ActivatedRoute,
@@ -24,17 +27,22 @@ export class GroupAddComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.createForm();
+    const item = this.dataService.item;
+    if(!item){
+      this.back();
+    }
+    this.createForm(item);
+    this.init = true;
   }
 
-  createForm() {
+  createForm(item: any) {
     this.form = this.fb.group({
-      name: ['', Validators.required],
-      category: ['', [Validators.required]],
-      value: ['', [Validators.required]],
-      createdAt: [Date()],
-      updatedAt: [Date()],
-      active:[true],
+      name: [item.name, Validators.required],
+      category: [item.category, [Validators.required]],
+      value: [item.value, [Validators.required]],
+      createdAt: [item.createdAt, [Validators.required]],
+      active:[item.active , [Validators.required]],
+      updatedAt: [Date() , [Validators.required]],
     });
   }
 
@@ -50,7 +58,7 @@ export class GroupAddComponent implements OnInit {
       (data)=>{
         this.toast.default(data?.id,'Dado salvo');
         this.loading = false;
-        this.router.navigate(['./../list'], {relativeTo: this.activatedRoute});
+        this.back();
       },
       ()=>{
         this.loading = false;

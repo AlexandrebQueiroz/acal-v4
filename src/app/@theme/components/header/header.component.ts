@@ -6,6 +6,12 @@ import { LayoutService } from '../../../@core/utils';
 import { map, takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
 
+enum MenuState {
+  hidden,
+  compact,
+  full,
+}
+
 @Component({
   selector: 'ngx-header',
   styleUrls: ['./header.component.scss'],
@@ -14,6 +20,8 @@ import { Subject } from 'rxjs';
 export class HeaderComponent implements OnInit, OnDestroy {
 
   userPictureOnly = false;
+  stateMenu: MenuState.full;
+  currentBreakpoint: number;
   user: any;
 
   themes = [
@@ -57,12 +65,18 @@ export class HeaderComponent implements OnInit, OnDestroy {
       .subscribe((users: any) => this.user = users.nick);
 
     const { xl } = this.breakpointService.getBreakpointsMap();
+    const { sm } = this.breakpointService.getBreakpointsMap();
+
     this.themeService.onMediaQueryChange()
       .pipe(
-        map(([, currentBreakpoint]) => currentBreakpoint.width < xl),
+        map(([, currentBreakpoint]) => currentBreakpoint),
         takeUntil(this.destroy$),
       )
-      .subscribe((isLessThanXl: boolean) => this.userPictureOnly = isLessThanXl);
+      .subscribe(currentBreakpoint  =>{
+        this.userPictureOnly = currentBreakpoint.width < xl;
+        this.currentBreakpoint = currentBreakpoint.width;
+      })
+    ;
 
     this.themeService.onThemeChange()
       .pipe(
@@ -70,6 +84,15 @@ export class HeaderComponent implements OnInit, OnDestroy {
         takeUntil(this.destroy$),
       )
       .subscribe(themeName => this.currentTheme = themeName);
+
+    this.menuService.onItemClick().subscribe(() => {
+      if(this.currentBreakpoint < sm){
+        this.sidebarService.collapse('menu-sidebar');
+      } else if ((this.currentBreakpoint >= sm && this.currentBreakpoint < xl)){
+        this.sidebarService.compact('menu-sidebar');
+      }
+
+    });
   }
 
   ngOnDestroy() {
