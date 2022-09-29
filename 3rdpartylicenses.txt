@@ -384,6 +384,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 
+ngx-pagination
+
 pace-js
 MIT
 Copyright (c) 2013 HubSpot, Inc.
