@@ -1,9 +1,10 @@
 {
   "name": "acal-web",
-  "short_name": "acal-web",
+  "short_name": "acal",
   "theme_color": "#1976d2",
-  "background_color": "#fafafa",
+  "lang": "pt-BR",
   "display": "standalone",
+  "background_color": "#fafafa",
   "scope": "./",
   "start_url": "./",
   "icons": [
