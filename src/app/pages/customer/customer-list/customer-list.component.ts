@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { DashboardService } from '../../dashboard/dashboard.service';
+import { CustomerService } from '../customer.service';
 
 @Component({
   selector: 'ngx-customer-list',
@@ -13,7 +13,7 @@ export class CustomerListComponent implements OnInit {
   item$: Observable<any[]>;
 
   constructor(
-    private service: DashboardService,
+    private service: CustomerService,
     private activatedRoute: ActivatedRoute,
     private router: Router,
     ){

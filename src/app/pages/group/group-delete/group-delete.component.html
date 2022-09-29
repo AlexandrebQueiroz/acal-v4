@@ -1,0 +1,74 @@
+<nb-card>
+
+  <nb-card-body *ngIf="item" >
+    <div class="row">
+
+      <div class="col-xl-8 col-md-6 col-12 form-group ">
+
+        <span class="label">
+          Nome:
+        </span>
+
+        <input
+          type="text"
+          nbInput
+          fullWidth
+          [(ngModel)]="item.name"
+          class="form-control"
+          placeholder="Nome:">
+      </div>
+
+      <div class="col-xl-4 col-md-6 col-12 form-group ">
+
+        <span class="label">
+          Categoria:*
+        </span><br/>
+
+        <nb-select
+          placeholder="Selecione"
+          fullWidth
+          [(selected)]="item.category"
+          title="Categoria:">
+          <nb-option value="Sócio Fundador">Sócio Fundador</nb-option>
+          <nb-option value="Sócio Efetivo">Sócio Efetivo</nb-option>
+          <nb-option value="Temporário">Temporário</nb-option>
+        </nb-select>
+
+      </div>
+
+      <div class="col-md-6 col-12 form-group ">
+
+        <span class="label">
+          Valor:*
+        </span>
+
+        <input
+          mask="separator.2"
+          [thousandSeparator]="'.'"
+          [decimalMarker]="','"
+          prefix="R$ "
+          [(ngModel)]="item.value"
+          [dropSpecialCharacters]="true"
+          type="text"
+          nbInput
+          fullWidth
+          class="form-control"
+          placeholder="Valor:">
+      </div>
+
+
+    </div>
+  </nb-card-body>
+
+  <nb-card-footer>
+
+    <button nbButton type="button" (click)="back()" class="m-1" >
+      Voltar
+    </button>
+
+    <button nbButton type="button" (click)="delete()" class="m-1">
+      Excluir
+    </button>
+
+  </nb-card-footer>
+</nb-card>

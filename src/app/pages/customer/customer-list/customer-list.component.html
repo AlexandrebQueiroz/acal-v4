@@ -1,54 +1,53 @@
 <nb-card>
-  <nb-accordion>
-    <nb-accordion-item>
-      <nb-accordion-item-header>
-        <nb-icon
-          pack="eva"
-          icon='funnel-outline'
-          attr.aria-label='Filtro'>
-        </nb-icon>
 
-        Filtros
+  <nb-card-header>
+    <nb-accordion>
+      <nb-accordion-item>
+        <nb-accordion-item-header>
+          <nb-icon
+            pack="eva"
+            icon='funnel-outline'
+            attr.aria-label='Filtro'>
+          </nb-icon>
 
-      </nb-accordion-item-header>
-      <nb-accordion-item-body>
-        <div class="row">
+          Filtros
 
-          <div class="col-9">
-            <input
+        </nb-accordion-item-header>
+        <nb-accordion-item-body>
+          <div class="row">
+
+            <div class="col-9">
+              <input
+                type="text"
+                nbInput
+                fullWidth
+                placeholder="Nome:">
+            </div>
+
+            <div class="col-2">
+              <input
               type="text"
               nbInput
               fullWidth
-              placeholder="Nome:">
+              placeholder="Documento:">
+            </div>
+
+            <div class="col-1">
+              <button nbButton fullWidth outline (click)="add()">
+                <nb-icon
+                  pack="eva"
+                  icon='search-outline'
+                  attr.aria-label='adicionar usuario'>
+                </nb-icon>
+              </button>
+            </div>
+
           </div>
 
-          <div class="col-2">
-            <input
-            type="text"
-            nbInput
-            fullWidth
-            placeholder="Documento:">
-          </div>
-
-          <div class="col-1">
-            <button nbButton fullWidth outline (click)="add()">
-              <nb-icon
-                pack="eva"
-                icon='search-outline'
-                attr.aria-label='adicionar usuario'>
-              </nb-icon>
-            </button>
-          </div>
-
-        </div>
-
-      </nb-accordion-item-body>
-    </nb-accordion-item>
-    </nb-accordion>
-</nb-card>
-
-
-<nb-card>
+        </nb-accordion-item-body>
+      </nb-accordion-item>
+      </nb-accordion>
+  </nb-card-header>
 
   <nb-card-body>
     <div class="table-responsive">
@@ -64,11 +63,7 @@
 
         <thead>
           <tr>
-
-            <th>
-            </th>
-
-            <th>
+            <th colspan="2">
             </th>
 
             <th  colspan="2">

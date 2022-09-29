@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CustomerAddComponent } from './customer-add.component';
+import { GroupDeleteComponent } from './group-delete.component';
 
-describe('CustomerAddComponent', () => {
-  let component: CustomerAddComponent;
-  let fixture: ComponentFixture<CustomerAddComponent>;
+describe('GroupDeleteComponent', () => {
+  let component: GroupDeleteComponent;
+  let fixture: ComponentFixture<GroupDeleteComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CustomerAddComponent ],
+      declarations: [ GroupDeleteComponent ],
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CustomerAddComponent);
+    fixture = TestBed.createComponent(GroupDeleteComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

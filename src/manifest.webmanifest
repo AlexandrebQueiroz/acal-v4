@@ -1,6 +1,6 @@
 {
-  "name": "acal-web-demo",
-  "short_name": "acal-web-demo",
+  "name": "acal-web",
+  "short_name": "acal-web",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
   "display": "standalone",

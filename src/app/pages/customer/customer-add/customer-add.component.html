@@ -1,12 +1,6 @@
 <form class="form" [formGroup]="form" (ngSubmit)="onSubmit()" [nbSpinner]="loading">
   <nb-card>
     <nb-card-body>
-        Adicionar Associado
-    </nb-card-body>
-  </nb-card>
-
-  <nb-card>
-    <nb-card-body>
       <div class="row">
 
         <div class="col-xl-8 col-md-6 col-12 form-group ">
@@ -63,6 +57,42 @@
             Campo Obrigatório
           </span>
 
+        </div>
+
+        <div class="col-md-6 col-12 form-group ">
+
+          <span class="label">
+            {{showPerson ? 'Data de nascimento:' : 'Abertura da empresa:'}}
+          </span>
+
+          <input
+            type="text"
+            nbInput
+            fullWidth
+            class="form-control"
+            status="basic"
+            [placeholder]="showPerson ? 'Data de nascimento:' : 'Abertura da empresa:'"
+            formControlName="bithday"
+            [status]='getStatus(bithday())'
+            mask="00/00/0000">
+        </div>
+
+        <div class="col-md-6 col-12 form-group ">
+
+          <span class="label">
+            Número de telefone
+          </span>
+
+          <input
+            type="text"
+            nbInput
+            fullWidth
+            class="form-control"
+            status="basic"
+            [placeholder]="'Número de telefone'"
+            formControlName="phoneNumber"
+            [status]='getStatus(phoneNumber())'
+            mask="(00)0 0000-0000">
         </div>
 
       </div>

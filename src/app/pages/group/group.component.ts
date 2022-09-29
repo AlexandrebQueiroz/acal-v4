@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'ngx-group',
-  template: '<router-outlet></router-outlet>',
+  templateUrl: './group.component.html',
 })
 export class GroupComponent implements OnInit {
 

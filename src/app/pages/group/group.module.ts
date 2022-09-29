@@ -1,27 +1,38 @@
-import { NbIconModule, NbAccordionModule, NbCardModule, NbButtonModule, NbInputModule } from '@nebular/theme';
-import { GroupRoutingModule } from './group-routing.module';
-import { GroupService } from './group.service';
-import { NgModule } from '@angular/core';
+import { NgxMaskModule } from 'ngx-mask';
 import { CommonModule } from '@angular/common';
-import { GroupComponent } from './group.component';
+import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {
+  NbAccordionModule, NbButtonModule, NbCardModule, NbIconModule, NbInputModule, NbSelectModule, NbSpinnerModule,
+} from '@nebular/theme';
 import { GroupAddComponent } from './group-add/group-add.component';
 import { GroupListComponent } from './group-list/group-list.component';
+import { GroupRoutingModule } from './group-routing.module';
+import { GroupComponent } from './group.component';
+import { GroupService } from './group.service';
+import { GroupDeleteComponent } from './group-delete/group-delete.component';
 
 @NgModule({
   imports: [
     CommonModule,
     GroupRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
 
+    NbSpinnerModule,
     NbIconModule,
     NbAccordionModule,
     NbCardModule,
     NbButtonModule,
     NbInputModule,
+    NgxMaskModule.forChild(),
+    NbSelectModule,
   ],
   declarations: [
     GroupComponent,
     GroupAddComponent,
     GroupListComponent,
+    GroupDeleteComponent,
   ],
   providers:[
     GroupService,

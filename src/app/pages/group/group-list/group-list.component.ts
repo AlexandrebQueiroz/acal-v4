@@ -1,3 +1,4 @@
+import { DataService } from './../../../@data/data.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -16,6 +17,7 @@ export class GroupListComponent implements OnInit {
     private service: GroupService,
     private activatedRoute: ActivatedRoute,
     private router: Router,
+    private dataService: DataService,
     ){
   }
 
@@ -23,8 +25,13 @@ export class GroupListComponent implements OnInit {
     this.item$ = this.service.get();
   }
 
-  add(){
+  add() {
     this.router.navigate(['./../add'], {relativeTo: this.activatedRoute});
+  }
+
+  delete(item: any) {
+    this.dataService.item = item;
+    this.router.navigate(['./../delete'], { relativeTo: this.activatedRoute});
   }
 
 }

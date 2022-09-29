@@ -37,6 +37,9 @@ export class CustomerAddComponent implements OnInit {
     this.form = this.fb.group({
       name: ['', Validators.required],
       document: ['', [Validators.required]],
+
+      bithday: [''],
+      phoneNumber: [''],
       createdAt: [Date()],
       active:[true],
     });
@@ -75,7 +78,6 @@ export class CustomerAddComponent implements OnInit {
      }
 
      return 'danger';
-
   }
 
   public name(): AbstractControl {
@@ -84,5 +86,13 @@ export class CustomerAddComponent implements OnInit {
 
   public document(): AbstractControl {
     return this.form.get('document');
+  }
+
+  public bithday(): AbstractControl {
+    return this.form.get('bithday');
+  }
+
+  public phoneNumber(): AbstractControl {
+    return this.form.get('phoneNumber');
   }
 }
