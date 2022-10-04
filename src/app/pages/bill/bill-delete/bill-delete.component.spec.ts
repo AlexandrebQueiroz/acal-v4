@@ -8,7 +8,7 @@ describe('BillDeleteComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BillDeleteComponent ]
+      declarations: [ BillDeleteComponent ],
     })
     .compileComponents();
   });

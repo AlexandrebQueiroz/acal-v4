@@ -8,7 +8,7 @@ describe('AddressDeleteComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AddressDeleteComponent ]
+      declarations: [ AddressDeleteComponent ],
     })
     .compileComponents();
   });

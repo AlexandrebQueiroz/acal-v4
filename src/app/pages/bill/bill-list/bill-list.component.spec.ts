@@ -8,7 +8,7 @@ describe('BillListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BillListComponent ]
+      declarations: [ BillListComponent ],
     })
     .compileComponents();
   });

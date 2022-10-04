@@ -7,7 +7,7 @@ import { ContractService } from './contract.service';
 @Component({
   selector: 'ngx-contract',
   templateUrl: './contract.component.html',
-  styleUrls: ['./contract.component.scss']
+  styleUrls: ['./contract.component.scss'],
 })
 export class ContractComponent implements OnInit {
 
