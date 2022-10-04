@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "acaldb": {
+      "hosting": {
+        "acal-web": [
+          "acaldb"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "acaldb"
+  }
+}

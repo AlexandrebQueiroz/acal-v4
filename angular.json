@@ -46,7 +46,7 @@
               "node_modules/tinymce/themes/modern/theme.min.js",
               "node_modules/tinymce/plugins/link/plugin.min.js",
               "node_modules/tinymce/plugins/paste/plugin.min.js",
-              "node_modules/tinymce/plugins/table/plugin.min.js",
+              "node_modules/tinymce/plugins/table/plugin.min.js"
             ],
             "allowedCommonJsDependencies": [
               "lodash",
@@ -117,7 +117,7 @@
               "node_modules/tinymce/themes/modern/theme.min.js",
               "node_modules/tinymce/plugins/link/plugin.min.js",
               "node_modules/tinymce/plugins/paste/plugin.min.js",
-              "node_modules/tinymce/plugins/table/plugin.min.js",
+              "node_modules/tinymce/plugins/table/plugin.min.js"
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.css",
@@ -150,6 +150,16 @@
               "src/**/*.ts",
               "src/**/*.html"
             ]
+          }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "acal-web:build:production",
+            "firebaseProject": "acaldb",
+            "firebaseHostingSite": "acaldb"
           }
         }
       }

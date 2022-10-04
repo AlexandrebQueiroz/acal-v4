@@ -14,6 +14,7 @@ import {
 } from './utils';
 import { UserData } from './data/users';
 import { UserService } from './mock/users.service';
+import { NbFirebasePasswordStrategy } from '@nebular/firebase-auth';
 
 const DATA_SERVICES = [
   { provide: UserData, useClass: UserService },
@@ -26,15 +27,10 @@ export class NbSimpleRoleProvider extends NbRoleProvider {
 }
 
 export const NB_CORE_PROVIDERS = [
-  //...MockDataModule.forRoot().providers,
   ...DATA_SERVICES,
   ...NbAuthModule.forRoot({
 
     strategies: [
-      NbDummyAuthStrategy.setup({
-        name: 'email',
-        delay: 3000,
-      }),
     ],
     forms: {
     },

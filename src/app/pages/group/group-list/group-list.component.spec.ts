@@ -8,7 +8,7 @@ describe('GroupListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GroupListComponent ]
+      declarations: [ GroupListComponent ],
     })
     .compileComponents();
   });

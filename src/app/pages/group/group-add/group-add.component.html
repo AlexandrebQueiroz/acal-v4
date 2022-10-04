@@ -13,6 +13,7 @@
             type="text"
             nbInput
             fullWidth
+
             [status]='getStatus(name())'
             formControlName="name"
             class="form-control"
@@ -33,6 +34,7 @@
           <nb-select
             placeholder="Selecione"
             [status]='getStatus(category())'
+
             formControlName="category"
             fullWidth
             title="Categoria:">

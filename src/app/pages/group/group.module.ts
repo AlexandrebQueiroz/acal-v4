@@ -12,6 +12,7 @@ import { GroupComponent } from './group.component';
 import { GroupService } from './group.service';
 import { GroupDeleteComponent } from './group-delete/group-delete.component';
 import { GroupEditComponent } from './group-edit/group-edit.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   imports: [
@@ -28,6 +29,7 @@ import { GroupEditComponent } from './group-edit/group-edit.component';
     NbInputModule,
     NgxMaskModule.forChild(),
     NbSelectModule,
+    NgxPaginationModule,
   ],
   declarations: [
     GroupComponent,

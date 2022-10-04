@@ -1,8 +1,8 @@
-import { DataService } from './../../../@data/data.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { GroupService } from '../group.service';
+import { DataService } from './../../../@data/data.service';
 
 @Component({
   selector: 'ngx-group-list',

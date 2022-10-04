@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DashboardComponent } from './dashboard/dashboard.component';
 
 import { NotFoundComponent } from './miscellaneous/not-found/not-found.component';
 import { PagesComponent } from './pages.component';
@@ -23,6 +22,26 @@ const routes: Routes = [{
       path: 'group',
       loadChildren: () => import('./group/group.module')
         .then(m => m.GroupModule),
+    },
+    {
+      path: 'address',
+      loadChildren: () => import('./address/address.module')
+        .then(m => m.AddressModule),
+    },
+    {
+      path: 'contract',
+      loadChildren: () => import('./contract/contract.module')
+        .then(m => m.ContractModule),
+    },
+    {
+      path: 'invoice',
+      loadChildren: () => import('./invoice/invoice.module')
+        .then(m => m.InvoiceModule),
+    },
+    {
+      path: 'bill',
+      loadChildren: () => import('./bill/bill.module')
+        .then(m => m.BillModule),
     },
     {
       path: '',

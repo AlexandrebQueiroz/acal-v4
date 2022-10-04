@@ -5,6 +5,7 @@ import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import {NgxPaginationModule} from 'ngx-pagination';
 import {
   NbDatepickerModule,
   NbDialogModule,
@@ -21,6 +22,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { registerLocaleData } from '@angular/common';
 import ptBr from '@angular/common/locales/pt';
+import { AngularFireModule } from '@angular/fire/compat';
 registerLocaleData(ptBr);
 
 @NgModule({
@@ -41,12 +43,12 @@ registerLocaleData(ptBr);
 
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
-
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       registrationStrategy: 'registerWhenStable:30000',
     }),
 
+    NgxPaginationModule,
     NgxMaskModule.forRoot(),
   ],
   providers:[
