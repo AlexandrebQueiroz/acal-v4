@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { ContractComponent } from '../contract/contract.component';
 import { ContractListComponent } from './contract-list/contract-list.component';
 import { ContractRoutingModule } from './contract-routing.module';
+import { ContractAddComponent } from './contract-add/contract-add.component';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { ContractRoutingModule } from './contract-routing.module';
   declarations: [
     ContractComponent,
     ContractListComponent,
+    ContractAddComponent,
   ],
   providers:[
     ContractService,

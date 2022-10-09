@@ -1,0 +1,145 @@
+<form class="form" [formGroup]="form" (ngSubmit)="onSubmit()" [nbSpinner]="loading">
+  <nb-card>
+    <nb-card-body>
+      <div class="row">
+
+        <div class="col-xl-4 col-md-2 col-12 form-group ">
+
+          <span class="label">
+            Referência:*
+          </span>
+
+          <input
+            type="text"
+            nbInput
+            fullWidth
+            mask="00/0000"
+            [status]='getStatus(reference())'
+            formControlName="reference"
+            class="form-control"
+            placeholder="Referência">
+
+          <span class="text-danger label" *ngIf="isSubmmited && reference().hasError('required')">
+            Campo Obrigatório
+          </span>
+
+        </div>
+
+        <div class="col-12 form-group ">
+
+          <div class="table-responsive">
+            <table class="table table-bordless table-hover">
+              <thead>
+                <tr>
+                  <th colspan="4" class="text-center">
+                    Coleta
+                  </th>
+                </tr>
+              </thead>
+
+              <thead>
+                <tr>
+                  <th class="col-6">
+                    Parâmetros
+                  </th>
+
+                  <th class="col-2">
+                    Exigidas
+                  </th>
+
+                  <th class="col-2">
+                    Analisadas
+                  </th>
+
+                  <th class="col-2">
+                    Em Conformidade
+                  </th>
+
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+
+                  <td class="align-middle">Cor aparente - 15UH</td>
+
+                  <td class="align-middle">
+                    <input
+                      type="text"
+                      nbInput
+                      fullWidth
+                      mask="00/0000"
+                      [status]='getStatus(reference())'
+                      formControlName="reference"
+                      class="form-control"
+                      placeholder="Referência">
+                  </td>
+
+                  <td class="align-middle">
+                    <input
+                      type="text"
+                      nbInput
+                      fullWidth
+                      mask="00/0000"
+                      [status]='getStatus(reference())'
+                      formControlName="reference"
+                      class="form-control"
+                      placeholder="Referência">
+                    </td>
+
+                  <td class="align-middle">
+                    <input
+                      type="text"
+                      nbInput
+                      fullWidth
+                      mask="00/0000"
+                      [status]='getStatus(reference())'
+                      formControlName="reference"
+                      class="form-control"
+                      placeholder="Referência">
+                    </td>
+                </tr>
+                <tr>
+                  <td class="align-middle">Turbidez</td>
+                  <td class="align-middle">10</td>
+                  <td class="align-middle">10</td>
+                  <td class="align-middle">10</td>
+                </tr>
+                <tr>
+                  <td class="align-middle">Cloro - Min 0,2 mg/l</td>
+                  <td class="align-middle">10</td>
+                  <td class="align-middle">10</td>
+                  <td class="align-middle">10</td>
+                </tr>
+                <tr>
+                  <td class="align-middle">Eschirichia Coli</td>
+                  <td class="align-middle">10</td>
+                  <td class="align-middle">10</td>
+                  <td class="align-middle">10</td>
+                </tr>
+                <tr>
+                  <td class="align-middle">Coliformes Totais</td>
+                  <td class="align-middle">10</td>
+                  <td class="align-middle">10</td>
+                  <td class="align-middle">10</td>
+                </tr>
+            </table>
+         </div>
+        </div>
+      </div>
+
+    </nb-card-body>
+
+    <nb-card-footer>
+
+      <button nbButton type="button" (click)="back()" class="m-1" >
+        Voltar
+      </button>
+
+      <button nbButton type="submit" class="m-1">
+        Enviar
+      </button>
+
+    </nb-card-footer>
+  </nb-card>
+</form>

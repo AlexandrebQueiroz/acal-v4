@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CpfPipe } from './pipe/cpf.pipe';
-import { AddressPipe } from './pipe/address.pipe';
+import { CpfPipe } from './pipe/cpf/cpf.pipe';
+import { AddressPipe } from './pipe/address/address.pipe';
+import { ReferencePipe } from './pipe/reference/reference.pipe';
 
 @NgModule({
   imports: [
@@ -10,12 +11,14 @@ import { AddressPipe } from './pipe/address.pipe';
   declarations: [
     CpfPipe,
     AddressPipe,
+    ReferencePipe,
   ],
   providers:[
   ],
   exports:[
     CpfPipe,
     AddressPipe,
+    ReferencePipe,
   ],
 })
 export class LibraryModule { }

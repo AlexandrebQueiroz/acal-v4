@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { Address } from '../model/address-model';
+import { Address } from '../../model/address-model';
 
 @Pipe({
   name: 'address',

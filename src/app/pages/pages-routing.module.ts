@@ -44,6 +44,11 @@ const routes: Routes = [{
         .then(m => m.BillModule),
     },
     {
+      path: 'parameter',
+      loadChildren: () => import('./parameter/parameter.module')
+        .then(m => m.ParameterModule),
+    },
+    {
       path: '',
       redirectTo: 'dashboard',
       pathMatch: 'full',

@@ -12,7 +12,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
     group: true,
   },
   {
-    title: 'Associado',
+    title: 'Associados',
     icon: 'person-outline',
     link: '/pages/customer',
   },
@@ -22,12 +22,12 @@ export const MENU_ITEMS: NbMenuItem[] = [
     link: '/pages/group',
   },
   {
-    title: 'Matricula',
+    title: 'Matrículas',
     icon: 'home-outline',
     link: '/pages/address',
   },
   {
-    title: 'Contrato',
+    title: 'Contratos',
     icon: 'file-text-outline',
     link: '/pages/contract',
   },
@@ -36,16 +36,21 @@ export const MENU_ITEMS: NbMenuItem[] = [
     group: true,
   },
   {
-    title: 'Gerar Fatura',
+    title: 'Gerar Faturas',
     icon: 'archive-outline',
     link: '/pages/invoice',
+  },
+  {
+    title: 'Parâmetros',
+    icon: 'color-picker-outline',
+    link: '/pages/parameter',
   },
   {
     title: 'Financeiro',
     group: true,
   },
   {
-    title: 'Fatura',
+    title: 'Faturas',
     icon: 'credit-card-outline',
     link: '/pages/bill',
   },

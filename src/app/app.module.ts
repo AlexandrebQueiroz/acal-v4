@@ -23,6 +23,7 @@ import { AppComponent } from './app.component';
 import { registerLocaleData } from '@angular/common';
 import ptBr from '@angular/common/locales/pt';
 import { AngularFireModule } from '@angular/fire/compat';
+import { NbDateFnsDateModule } from '@nebular/date-fns';
 registerLocaleData(ptBr);
 
 @NgModule({
@@ -46,6 +47,10 @@ registerLocaleData(ptBr);
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       registrationStrategy: 'registerWhenStable:30000',
+    }),
+    NbDateFnsDateModule.forRoot({
+      parseOptions: { useAdditionalWeekYearTokens: true, useAdditionalDayOfYearTokens: true },
+      formatOptions: { useAdditionalWeekYearTokens: true, useAdditionalDayOfYearTokens: true },
     }),
 
     NgxPaginationModule,
