@@ -1,9 +1,17 @@
-import { ModuleWithProviders, NgModule, Optional, SkipSelf } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NbAuthModule, NbDummyAuthStrategy } from '@nebular/auth';
-import { NbSecurityModule, NbRoleProvider } from '@nebular/security';
+import { ModuleWithProviders, NgModule, Optional, SkipSelf } from '@angular/core';
+import { NbAuthModule } from '@nebular/auth';
+import { NbFirebaseAuthModule, NbFirebasePasswordStrategy } from '@nebular/firebase-auth';
+import { NbRoleProvider, NbSecurityModule } from '@nebular/security';
 import { of as observableOf } from 'rxjs';
 
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { getAuth, provideAuth } from '@angular/fire/auth';
+import { AngularFireAuth, AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { environment } from '../../environments/environment';
+import { UserData } from './data/users';
+import { UserService } from './mock/users.service';
 import { throwIfAlreadyLoaded } from './module-import-guard';
 import {
   AnalyticsService,
@@ -12,12 +20,19 @@ import {
   SeoService,
   StateService,
 } from './utils';
-import { UserData } from './data/users';
-import { UserService } from './mock/users.service';
-import { NbFirebasePasswordStrategy } from '@nebular/firebase-auth';
+import { AngularFireModule } from '@angular/fire/compat';
 
 const DATA_SERVICES = [
   { provide: UserData, useClass: UserService },
+];
+
+export const NB_AUTH_MODULE_FIRE = [
+  provideFirebaseApp(() => initializeApp(environment.firebase)),
+  provideFirestore(() => getFirestore()),
+  provideAuth(() => getAuth()),
+  AngularFireModule.initializeApp(environment.firebase),
+  AngularFireAuthModule,
+  NbFirebaseAuthModule,
 ];
 
 export class NbSimpleRoleProvider extends NbRoleProvider {
@@ -28,13 +43,17 @@ export class NbSimpleRoleProvider extends NbRoleProvider {
 
 export const NB_CORE_PROVIDERS = [
   ...DATA_SERVICES,
+
   ...NbAuthModule.forRoot({
 
-    strategies: [
-    ],
-    forms: {
-    },
-  }).providers,
+      strategies: [
+        NbFirebasePasswordStrategy.setup({
+          name: 'password',
+        }),
+      ],
+      forms: {},
+
+    }).providers,
 
   NbSecurityModule.forRoot({
     accessControl: {
@@ -53,11 +72,13 @@ export const NB_CORE_PROVIDERS = [
   {
     provide: NbRoleProvider, useClass: NbSimpleRoleProvider,
   },
+
   AnalyticsService,
   LayoutService,
   PlayerService,
   SeoService,
   StateService,
+
 ];
 
 @NgModule({
@@ -68,6 +89,9 @@ export const NB_CORE_PROVIDERS = [
     NbAuthModule,
   ],
   declarations: [],
+  providers:[
+    AngularFireAuth,
+  ],
 })
 export class CoreModule {
   constructor(@Optional() @SkipSelf() parentModule: CoreModule) {

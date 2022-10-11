@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NbToastrService } from '@nebular/theme';
 import { ParameterService } from '../parameter.service';
@@ -30,7 +30,13 @@ export class ParameterAddComponent implements OnInit {
   createForm() {
     this.form = this.fb.group({
       reference: ['', Validators.required],
+
+      parameters: this.fb.array([
+        new FormControl(),
+      ]),
+
     });
+
   }
 
   onSubmit(){
